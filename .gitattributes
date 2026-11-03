@@ -1,0 +1,7 @@
+# Единообразие переносов строк между Linux/Windows/macOS
+* text=auto
+*.md text
+*.h text
+*.cpp text
+*.ini text
+*.gitignore text
