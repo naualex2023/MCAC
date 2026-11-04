@@ -1,7 +1,7 @@
 #pragma once
 // ============================================================
 //  MCAC v0.1 — конфигурация железа и параметров
-//  ESP32 DevKit (WROOM-32) + LCD1602(I2C) + SSR-25DA(2N7000) + NTC
+//  ESP32 DevKit (WROOM-32) + LCD2004A/LCD1602(I2C) + SSR-25DA(2N7000) + NTC
 // ============================================================
 
 // ---------- Пины ----------
@@ -11,8 +11,8 @@ constexpr int PIN_BUZZER   = 26;   // опц.: активный зуммер ч�
 constexpr int PIN_I2C_SDA  = 21;
 constexpr int PIN_I2C_SCL  = 22;
 constexpr uint8_t LCD_ADDR = 0x27; // если экран не отвечает — попробовать 0x3F
-constexpr uint8_t LCD_COLS = 16;
-constexpr uint8_t LCD_ROWS = 2;
+constexpr uint8_t LCD_COLS = 20;   // LCD 2004A (20×4); для 1602 — поставить 16/2
+constexpr uint8_t LCD_ROWS = 4;    // рендер в ui_lcd.cpp адаптируется автоматически
 
 // ---------- Датчик: штатный NTC (топология: 3V3 — NTC — [узел A] — R_DIV — GND) ----------
 constexpr float NTC_R25  = 100000.0f; // Ом @25°C — ЗАМЕНИТЬ на замеренное R25 своего датчика!

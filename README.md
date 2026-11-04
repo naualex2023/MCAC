@@ -2,7 +2,7 @@
 
 Замена штатного контроллера XK-3230 (автоклав, ТЭН 2 кВт, стерилизация до 121 °C).
 
-**Текущая версия: v0.1** (ESP32 DevKit + IRM-03-5 + LCD1602 I2C + SSR-25DA + штатный NTC).
+**Текущая версия: v0.1** (ESP32 DevKit + IRM-03-5 + LCD 2004A I2C 20×4 + SSR-25DA + штатный NTC).
 
 ## Состав репозитория
 
@@ -36,7 +36,7 @@ pio run -t upload && pio device monitor
 | `sensor` | NTC → °C (Beta-уравнение + калибровка + диагностика обрыва/КЗ) |
 | `pid` | ПИД с анти-windup + TPPWM-окно 8 с для SSR |
 | `machine` | конечный автомат: IDLE→HEATING→HOLD→DONE (+ALARM), журнал цикла |
-| `ui_lcd` | LCD 1602 — только индикация (управление — веб-UI) |
+| `ui_lcd` | LCD 2004A (20×4) — статус, Wi-Fi/IP, авария (1602 — адаптивный резерв) |
 | `webui`  | Wi-Fi STA/AP-конфигуратор, REST + страница, CSV-журнал, ArduinoOTA |
 | `storage`| уставки/калибровка/PID/Wi-Fi в NVS (флеш) |
 
