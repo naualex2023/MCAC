@@ -11,7 +11,9 @@ PLAN.md        — план разработки (требования, ауди
 BOM.md         — полный заказ-лист (апгрейд-путь)
 BOM-MIN.md     — эконом-вариант закупки (утверждён и куплен)
 docs/
-  ASSEMBLY.md  — руководство по сборке и пайке на перфплате
+  ASSEMBLY.md        — руководство по сборке и пайке на перфплате
+  schematic_v0.1.svg — принципиальная схема обвязки (вектор)
+  schematic_v0.1.png — то же, растровая копия (2480 px)
 firmware/      — прошивка PlatformIO (Arduino-ESP32)
   include/     — config.h (пины/параметры) + модули
   src/         — main.cpp + sensor/pid/machine/ui_lcd/webui/storage
@@ -28,6 +30,12 @@ pio run -t upload && pio device monitor
 после перезагрузки интерфейс на **http://mcac.local**.
 
 Сборка железа — `docs/ASSEMBLY.md`. Калибровка NTC — там же, §8.3.
+
+## Схема обвязки
+
+![Схема MCAC v0.1](docs/schematic_v0.1.svg)
+
+(вектор: `docs/schematic_v0.1.svg`, растр: `docs/schematic_v0.1.png`)
 
 ## Архитектура прошивки
 
