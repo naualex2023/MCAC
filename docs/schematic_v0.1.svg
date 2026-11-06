@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 780" font-family="Arial, Helvetica, sans-serif">
-  <!-- ============ MCAC v0.1 — принципиальная схема обвязки ============ -->
+  <!-- ============ MCAC v0.1 — принципиальная схема обвязки (ревизия 2) ============ -->
   <rect x="0" y="0" width="1240" height="780" fill="#ffffff"/>
 
-  <!-- Зона 220 В -->
-  <rect x="40" y="30" width="730" height="390" fill="none" stroke="#b33" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <!-- Зона 220 В (уплотнена, правый край 730) -->
+  <rect x="40" y="30" width="690" height="390" fill="none" stroke="#b33" stroke-width="1.5" stroke-dasharray="8,5"/>
   <text x="52" y="52" font-size="14" font-weight="bold" fill="#b33">СИЛОВАЯ ЧАСТЬ · 220 В</text>
 
   <!-- Разделитель зон -->
@@ -14,11 +14,11 @@
 
   <!-- Провода: L / N / PE -->
   <g stroke="#d40000" stroke-width="2.2" fill="none">
-    <path d="M100,120 H140"/><path d="M190,120 H220"/><path d="M270,120 H420"/>
-    <path d="M330,120 V65 H610"/>
+    <path d="M100,120 H140"/><path d="M190,120 H220"/><path d="M270,120 H390"/>
+    <path d="M310,120 V65 H580"/>
   </g>
   <g stroke="#0055d4" stroke-width="2.2" fill="none">
-    <path d="M100,210 H370"/><path d="M350,210 V88 H610"/>
+    <path d="M100,210 H370"/><path d="M330,210 V88 H580"/>
   </g>
   <g stroke="#1a7f37" stroke-width="2.2" fill="none">
     <path d="M100,290 H240 V380"/>
@@ -50,47 +50,47 @@
   <text x="352" y="160" font-size="11" fill="#333" text-anchor="end">RV1</text>
   <text x="352" y="174" font-size="10" fill="#333" text-anchor="end">S14K275</text>
 
-  <!-- SSR-25DA -->
-  <rect x="420" y="95" width="140" height="110" fill="#fafafa" stroke="#333" stroke-width="1.8"/>
-  <text x="490" y="140" font-size="13" font-weight="bold" text-anchor="middle">SSR-25DA</text>
-  <text x="490" y="156" font-size="10" text-anchor="middle" fill="#555">zero-cross</text>
-  <text x="490" y="178" font-size="10" text-anchor="middle" fill="#b33">радиатор ≥ 60 см²!</text>
-  <text x="428" y="112" font-size="13" fill="#d40000">~</text>
-  <text x="428" y="166" font-size="13" fill="#d40000">~</text>
-  <text x="553" y="113" font-size="12" text-anchor="end" fill="#e08a00">+</text>
-  <text x="553" y="173" font-size="12" text-anchor="end" fill="#e08a00">−</text>
-  <rect x="418" y="116" width="6" height="6" fill="#d40000"/>
-  <rect x="418" y="166" width="6" height="6" fill="#d40000"/>
-  <rect x="558" y="111" width="6" height="6" fill="#e08a00"/>
-  <rect x="558" y="161" width="6" height="6" fill="#e08a00"/>
+  <!-- SSR-25DA (сдвинут влево: 390..510) -->
+  <rect x="390" y="95" width="120" height="110" fill="#fafafa" stroke="#333" stroke-width="1.8"/>
+  <text x="450" y="140" font-size="13" font-weight="bold" text-anchor="middle">SSR-25DA</text>
+  <text x="450" y="156" font-size="10" text-anchor="middle" fill="#555">zero-cross</text>
+  <text x="450" y="178" font-size="10" text-anchor="middle" fill="#b33">радиатор ≥ 60 см²!</text>
+  <text x="398" y="112" font-size="13" fill="#d40000">~</text>
+  <text x="398" y="166" font-size="13" fill="#d40000">~</text>
+  <text x="503" y="113" font-size="12" text-anchor="end" fill="#e08a00">+</text>
+  <text x="503" y="173" font-size="12" text-anchor="end" fill="#e08a00">−</text>
+  <rect x="388" y="116" width="6" height="6" fill="#d40000"/>
+  <rect x="388" y="166" width="6" height="6" fill="#d40000"/>
+  <rect x="508" y="111" width="6" height="6" fill="#e08a00"/>
+  <rect x="508" y="161" width="6" height="6" fill="#e08a00"/>
 
   <!-- Цепь ТЭН -->
-  <path d="M420,170 H390 V260 H610" fill="none" stroke="#d40000" stroke-width="2.2"/>
-  <rect x="610" y="245" width="80" height="30" fill="#fff" stroke="#333" stroke-width="1.5"/>
-  <text x="650" y="257" font-size="11" text-anchor="middle">ТЭН</text>
-  <text x="650" y="270" font-size="10" text-anchor="middle" fill="#555">2 кВт</text>
-  <path d="M690,260 V330 H310 V210" fill="none" stroke="#0055d4" stroke-width="2.2"/>
+  <path d="M390,170 H365 V260 H560" fill="none" stroke="#d40000" stroke-width="2.2"/>
+  <rect x="560" y="245" width="80" height="30" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="600" y="257" font-size="11" text-anchor="middle">ТЭН</text>
+  <text x="600" y="270" font-size="10" text-anchor="middle" fill="#555">2 кВт</text>
+  <path d="M640,260 V330 H300 V210" fill="none" stroke="#0055d4" stroke-width="2.2"/>
 
-  <!-- IRM-03-5 -->
-  <rect x="610" y="35" width="160" height="70" fill="#fafafa" stroke="#333" stroke-width="1.8"/>
-  <text x="690" y="72" font-size="12" font-weight="bold" text-anchor="middle">IRM-03-5</text>
-  <text x="690" y="88" font-size="10" text-anchor="middle" fill="#555">5 В / 0.6 А, изолир.</text>
-  <text x="618" y="64" font-size="10" fill="#d40000">AC/L</text>
-  <text x="618" y="98" font-size="10" fill="#0055d4">AC/N</text>
-  <rect x="608" y="56" width="6" height="6" fill="#d40000"/>
-  <rect x="608" y="84" width="6" height="6" fill="#0055d4"/>
-  <rect x="768" y="51" width="6" height="6" fill="#e08a00"/>
-  <rect x="768" y="91" width="6" height="6" fill="#111"/>
-  <text x="766" y="60" font-size="10" fill="#e08a00" text-anchor="end">+V</text>
-  <text x="766" y="100" font-size="10" text-anchor="end">−V</text>
+  <!-- IRM-03-5 (сдвинут влево: 580..720) -->
+  <rect x="580" y="35" width="140" height="70" fill="#fafafa" stroke="#333" stroke-width="1.8"/>
+  <text x="650" y="72" font-size="12" font-weight="bold" text-anchor="middle">IRM-03-5</text>
+  <text x="650" y="88" font-size="10" text-anchor="middle" fill="#555">5 В / 0.6 А, изолир.</text>
+  <text x="588" y="64" font-size="10" fill="#d40000">AC/L</text>
+  <text x="588" y="98" font-size="10" fill="#0055d4">AC/N</text>
+  <rect x="578" y="56" width="6" height="6" fill="#d40000"/>
+  <rect x="578" y="84" width="6" height="6" fill="#0055d4"/>
+  <rect x="718" y="51" width="6" height="6" fill="#e08a00"/>
+  <rect x="718" y="91" width="6" height="6" fill="#111"/>
+  <text x="716" y="60" font-size="10" fill="#e08a00" text-anchor="end">+V</text>
+  <text x="716" y="100" font-size="10" text-anchor="end">−V</text>
 
   <!-- +5В шина и GND IRM -->
-  <path d="M770,55 H800" fill="none" stroke="#e08a00" stroke-width="2.4"/>
-  <path d="M560,115 H800" fill="none" stroke="#e08a00" stroke-width="2.4"/>
-  <path d="M800,55 V150 H1100" fill="none" stroke="#e08a00" stroke-width="2.4"/>
-  <text x="838" y="143" font-size="11" font-weight="bold" fill="#e08a00">+5 В</text>
-  <path d="M770,95 H790" fill="none" stroke="#111" stroke-width="2"/>
-  <g stroke="#111" stroke-width="2"><line x1="782" y1="100" x2="798" y2="100"/><line x1="785" y1="104" x2="795" y2="104"/><line x1="788" y1="108" x2="792" y2="108"/></g>
+  <path d="M720,55 H750" fill="none" stroke="#e08a00" stroke-width="2.4"/>
+  <path d="M510,115 H750" fill="none" stroke="#e08a00" stroke-width="2.4"/>
+  <path d="M750,55 V150 H1100" fill="none" stroke="#e08a00" stroke-width="2.4"/>
+  <text x="790" y="143" font-size="11" font-weight="bold" fill="#e08a00">+5 В</text>
+  <path d="M720,95 H740" fill="none" stroke="#111" stroke-width="2"/>
+  <g stroke="#111" stroke-width="2"><line x1="732" y1="100" x2="748" y2="100"/><line x1="735" y1="104" x2="745" y2="104"/><line x1="738" y1="108" x2="742" y2="108"/></g>
 
   <!-- PE земля -->
   <g stroke="#1a7f37" stroke-width="2">
@@ -100,87 +100,86 @@
   <text x="260" y="392" font-size="10" fill="#1a7f37">корпус автоклава, радиатор SSR</text>
 
   <!-- Точки соединений (силовая часть) -->
-  <g fill="#d40000"><circle cx="330" cy="120" r="3.5"/><circle cx="370" cy="120" r="3.5"/></g>
-  <g fill="#0055d4"><circle cx="310" cy="210" r="3.5"/><circle cx="350" cy="210" r="3.5"/><circle cx="370" cy="210" r="3.5"/></g>
-  <circle cx="800" cy="115" r="4" fill="#e08a00"/>
+  <g fill="#d40000"><circle cx="310" cy="120" r="3.5"/><circle cx="370" cy="120" r="3.5"/></g>
+  <g fill="#0055d4"><circle cx="300" cy="210" r="3.5"/><circle cx="330" cy="210" r="3.5"/><circle cx="370" cy="210" r="3.5"/></g>
+  <circle cx="750" cy="115" r="4" fill="#e08a00"/>
 
   <!-- ================= Слаботочная зона ================= -->
-  <!-- ESP32 DevKit -->
+  <!-- ESP32 DevKit: подписи пинов ВНУТРИ корпуса, провода снаружи не перекрывают -->
   <rect x="880" y="220" width="200" height="310" fill="#f8fbff" stroke="#345" stroke-width="2"/>
-  <text x="980" y="345" font-size="15" font-weight="bold" text-anchor="middle">ESP32 DevKit</text>
-  <text x="980" y="365" font-size="11" text-anchor="middle" fill="#555">WROOM-32</text>
-  <text x="980" y="382" font-size="10" text-anchor="middle" fill="#888">MCAC v0.1</text>
+  <text x="980" y="268" font-size="15" font-weight="bold" text-anchor="middle">ESP32 DevKit</text>
+  <text x="980" y="286" font-size="11" text-anchor="middle" fill="#555">WROOM-32 · MCAC v0.1</text>
   <!-- пины: верх -->
-  <rect x="917" y="217" width="6" height="6" fill="#e08a00"/><text x="920" y="212" font-size="11" text-anchor="middle" fill="#e08a00">5V</text>
-  <rect x="997" y="217" width="6" height="6" fill="#111"/><text x="1000" y="212" font-size="11" text-anchor="middle">GND</text>
+  <rect x="917" y="217" width="6" height="6" fill="#e08a00"/><text x="920" y="236" font-size="10" text-anchor="middle" fill="#e08a00">5V</text>
+  <rect x="997" y="217" width="6" height="6" fill="#111"/><text x="1000" y="236" font-size="10" text-anchor="middle">GND</text>
   <path d="M920,150 V220" fill="none" stroke="#e08a00" stroke-width="2.4"/>
   <circle cx="920" cy="150" r="4" fill="#e08a00"/>
   <path d="M1000,220 V198" fill="none" stroke="#111" stroke-width="2"/>
   <g stroke="#111" stroke-width="2"><line x1="992" y1="198" x2="1008" y2="198"/><line x1="995" y1="202" x2="1005" y2="202"/><line x1="998" y1="206" x2="1002" y2="206"/></g>
   <!-- пины: левый край -->
-  <rect x="877" y="247" width="6" height="6" fill="#111"/><text x="872" y="254" font-size="11" text-anchor="end">3V3</text>
-  <rect x="877" y="327" width="6" height="6" fill="#111"/><text x="872" y="334" font-size="11" text-anchor="end">GPIO34</text>
-  <rect x="877" y="367" width="6" height="6" fill="#111"/><text x="872" y="374" font-size="11" text-anchor="end">GPIO25</text>
-  <rect x="877" y="407" width="6" height="6" fill="#111"/><text x="872" y="414" font-size="11" text-anchor="end">GPIO26</text>
+  <rect x="877" y="247" width="6" height="6" fill="#111"/><text x="888" y="254" font-size="11">3V3</text>
+  <rect x="877" y="327" width="6" height="6" fill="#111"/><text x="888" y="334" font-size="11">GPIO34</text>
+  <rect x="877" y="367" width="6" height="6" fill="#111"/><text x="888" y="374" font-size="11">GPIO25</text>
+  <rect x="877" y="407" width="6" height="6" fill="#111"/><text x="888" y="414" font-size="11">GPIO26</text>
   <!-- пины: правый край -->
-  <rect x="1077" y="467" width="6" height="6" fill="#111"/><text x="1087" y="474" font-size="11">GPIO21/SDA</text>
-  <rect x="1077" y="507" width="6" height="6" fill="#111"/><text x="1087" y="514" font-size="11">GPIO22/SCL</text>
+  <rect x="1077" y="467" width="6" height="6" fill="#111"/><text x="1072" y="474" font-size="11" text-anchor="end">GPIO21·SDA</text>
+  <rect x="1077" y="507" width="6" height="6" fill="#111"/><text x="1072" y="514" font-size="11" text-anchor="end">GPIO22·SCL</text>
 
-  <!-- NTC-делитель: 3V3 — NTC — узел A — R1 — GND; узел A → GPIO34 -->
-  <path d="M880,250 H820 V265" fill="none" stroke="#111" stroke-width="2"/>
-  <rect x="810" y="265" width="20" height="45" fill="#fff" stroke="#333" stroke-width="1.5"/>
-  <line x1="808" y1="312" x2="832" y2="264" stroke="#333" stroke-width="1.2"/>
-  <text x="805" y="282" font-size="10" text-anchor="end">NTC</text>
-  <text x="805" y="294" font-size="9" text-anchor="end" fill="#555">(штатный)</text>
-  <path d="M820,310 V345" fill="none" stroke="#111" stroke-width="2"/>
-  <path d="M820,330 H877" fill="none" stroke="#111" stroke-width="2"/>
-  <circle cx="820" cy="330" r="3.5" fill="#111"/>
-  <rect x="810" y="345" width="20" height="45" fill="#fff" stroke="#333" stroke-width="1.5"/>
-  <text x="805" y="368" font-size="10" text-anchor="end">R1 10к 1%</text>
-  <path d="M820,390 V405" fill="none" stroke="#111" stroke-width="2"/>
-  <g stroke="#111" stroke-width="2"><line x1="812" y1="405" x2="828" y2="405"/><line x1="815" y1="409" x2="825" y2="409"/><line x1="818" y1="413" x2="822" y2="413"/></g>
+  <!-- NTC-делитель (разрежён: R1 уведён вниз, отдельная колонка x=850) -->
+  <path d="M880,250 H850 V260" fill="none" stroke="#111" stroke-width="2"/>
+  <rect x="840" y="260" width="20" height="45" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <line x1="838" y1="307" x2="862" y2="259" stroke="#333" stroke-width="1.2"/>
+  <text x="835" y="278" font-size="10" text-anchor="end">NTC</text>
+  <text x="835" y="291" font-size="9" text-anchor="end" fill="#555">(штатный)</text>
+  <path d="M850,305 V330" fill="none" stroke="#111" stroke-width="2"/>
+  <circle cx="850" cy="330" r="3.5" fill="#111"/>
+  <text x="858" y="326" font-size="9" fill="#666">A</text>
+  <path d="M850,330 H877" fill="none" stroke="#111" stroke-width="2"/>
+  <path d="M850,330 V470" fill="none" stroke="#111" stroke-width="2"/>
+  <rect x="840" y="470" width="20" height="45" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="835" y="492" font-size="10" text-anchor="end">R1 10к 1%</text>
+  <path d="M850,515 V528" fill="none" stroke="#111" stroke-width="2"/>
+  <g stroke="#111" stroke-width="2"><line x1="842" y1="528" x2="858" y2="528"/><line x1="845" y1="532" x2="855" y2="532"/><line x1="848" y1="536" x2="852" y2="536"/></g>
 
-  <!-- Ключ SSR: GPIO25 — R2 — затвор Q1; R3 подтяжка; сток → SSR «−» -->
-  <path d="M880,370 H850" fill="none" stroke="#111" stroke-width="2"/>
-  <rect x="830" y="362" width="20" height="16" fill="#fff" stroke="#333" stroke-width="1.5"/>
-  <text x="840" y="357" font-size="10" text-anchor="middle">R2 150</text>
-  <path d="M830,370 H790 H775" fill="none" stroke="#111" stroke-width="2"/>
-  <line x1="775" y1="355" x2="775" y2="385" stroke="#111" stroke-width="2.5"/>
-  <line x1="760" y1="345" x2="760" y2="395" stroke="#111" stroke-width="2.5"/>
-  <path d="M790,370 V395" fill="none" stroke="#111" stroke-width="1.6"/>
-  <circle cx="790" cy="370" r="3" fill="none" stroke="#111" stroke-width="1.4"/>
-  <rect x="780" y="395" width="20" height="40" fill="#fff" stroke="#333" stroke-width="1.5"/>
-  <text x="775" y="410" font-size="10" text-anchor="end">R3 10к</text>
-  <path d="M790,435 V448" fill="none" stroke="#111" stroke-width="1.6"/>
-  <g stroke="#111" stroke-width="2"><line x1="782" y1="448" x2="798" y2="448"/><line x1="785" y1="452" x2="795" y2="452"/><line x1="788" y1="456" x2="792" y2="456"/></g>
-  <path d="M760,395 V420" fill="none" stroke="#111" stroke-width="2"/>
-  <g stroke="#111" stroke-width="2"><line x1="752" y1="420" x2="768" y2="420"/><line x1="755" y1="424" x2="765" y2="424"/><line x1="758" y1="428" x2="762" y2="428"/></g>
-  <path d="M760,345 V305 H575 V165 H560" fill="none" stroke="#e08a00" stroke-width="2.2"/>
-  <text x="755" y="300" font-size="10" text-anchor="end">Q1 2N7000</text>
-  <text x="600" y="160" font-size="10" fill="#e08a00">к SSR «−»</text>
+  <!-- Ключ SSR (разрежён: R2 → узел → R3 вниз, Q1 левее, сток уходит вверх) -->
+  <path d="M880,370 H830" fill="none" stroke="#111" stroke-width="2"/>
+  <rect x="810" y="362" width="20" height="16" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="820" y="357" font-size="10" text-anchor="middle">R2 150</text>
+  <path d="M810,370 H765" fill="none" stroke="#111" stroke-width="2"/>
+  <circle cx="780" cy="370" r="3.5" fill="#111"/>
+  <line x1="765" y1="352" x2="765" y2="388" stroke="#111" stroke-width="2.5"/>
+  <line x1="745" y1="330" x2="745" y2="410" stroke="#111" stroke-width="2.5"/>
+  <path d="M780,370 V400" fill="none" stroke="#111" stroke-width="2"/>
+  <rect x="770" y="400" width="20" height="45" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="765" y="425" font-size="10" text-anchor="end">R3 10к</text>
+  <path d="M780,445 V458" fill="none" stroke="#111" stroke-width="2"/>
+  <g stroke="#111" stroke-width="2"><line x1="772" y1="458" x2="788" y2="458"/><line x1="775" y1="462" x2="785" y2="462"/><line x1="778" y1="466" x2="782" y2="466"/></g>
+  <path d="M745,410 V430" fill="none" stroke="#111" stroke-width="2"/>
+  <g stroke="#111" stroke-width="2"><line x1="737" y1="430" x2="753" y2="430"/><line x1="740" y1="434" x2="750" y2="434"/><line x1="743" y1="438" x2="747" y2="438"/></g>
+  <path d="M745,330 V235 H535 V165 H510" fill="none" stroke="#e08a00" stroke-width="2.2"/>
+  <text x="740" y="305" font-size="10" text-anchor="end">Q1 2N7000</text>
+  <text x="545" y="158" font-size="10" fill="#e08a00">к SSR «−»</text>
 
-  <!-- LCD 2004A -->
+  <!-- LCD 2004A (провода подходят к краю, подписи пинов LCD — слева от корпуса, в зазоре) -->
   <path d="M1100,150 V440 H1120" fill="none" stroke="#e08a00" stroke-width="2.4"/>
   <circle cx="1100" cy="150" r="4" fill="#e08a00"/>
   <rect x="1120" y="430" width="115" height="140" fill="#fffdf5" stroke="#333" stroke-width="1.8"/>
   <text x="1177" y="468" font-size="12" font-weight="bold" text-anchor="middle">LCD 2004A</text>
   <text x="1177" y="484" font-size="9" text-anchor="middle" fill="#555">+ I2C PCF8574</text>
-  <rect x="1117" y="437" width="6" height="6" fill="#e08a00"/><text x="1113" y="445" font-size="9" text-anchor="end" fill="#e08a00">VCC</text>
-  <rect x="1117" y="467" width="6" height="6" fill="#111"/><text x="1113" y="475" font-size="9" text-anchor="end">SDA</text>
-  <rect x="1117" y="507" width="6" height="6" fill="#111"/><text x="1113" y="515" font-size="9" text-anchor="end">SCL</text>
-  <rect x="1117" y="542" width="6" height="6" fill="#111"/><text x="1113" y="550" font-size="9" text-anchor="end">GND</text>
+  <rect x="1117" y="437" width="6" height="6" fill="#e08a00"/><text x="1112" y="445" font-size="9" text-anchor="end" fill="#e08a00">VCC</text>
+  <rect x="1117" y="467" width="6" height="6" fill="#111"/><text x="1112" y="475" font-size="9" text-anchor="end">SDA</text>
+  <rect x="1117" y="507" width="6" height="6" fill="#111"/><text x="1112" y="515" font-size="9" text-anchor="end">SCL</text>
+  <rect x="1117" y="542" width="6" height="6" fill="#111"/><text x="1112" y="550" font-size="9" text-anchor="end">GND</text>
   <path d="M1080,470 H1117" fill="none" stroke="#111" stroke-width="2"/>
   <path d="M1080,510 H1117" fill="none" stroke="#111" stroke-width="2"/>
   <path d="M1120,545 H1145" fill="none" stroke="#111" stroke-width="2"/>
   <g stroke="#111" stroke-width="2"><line x1="1137" y1="545" x2="1153" y2="545"/><line x1="1140" y1="549" x2="1150" y2="549"/><line x1="1143" y1="553" x2="1147" y2="553"/></g>
-  <text x="1098" y="463" font-size="9" text-anchor="middle">SDA</text>
-  <text x="1098" y="503" font-size="9" text-anchor="middle">SCL</text>
 
   <!-- Зуммер (опция) -->
-  <rect x="800" y="560" width="290" height="60" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="5,4"/>
-  <path d="M880,410 H845 V560" fill="none" stroke="#888" stroke-width="1.6" stroke-dasharray="5,4"/>
-  <text x="945" y="585" font-size="11" text-anchor="middle" fill="#555">BZ1 (опция): GPIO26 → R4 1к → NPN S8050</text>
-  <text x="945" y="601" font-size="11" text-anchor="middle" fill="#555">→ активный зуммер 5 В (ASSEMBLY §3.2)</text>
+  <rect x="890" y="560" width="290" height="60" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <path d="M880,410 H872 V560" fill="none" stroke="#888" stroke-width="1.6" stroke-dasharray="5,4"/>
+  <text x="1035" y="585" font-size="11" text-anchor="middle" fill="#555">BZ1 (опция): GPIO26 → R4 1к → NPN S8050</text>
+  <text x="1035" y="601" font-size="11" text-anchor="middle" fill="#555">→ активный зуммер 5 В (ASSEMBLY §3.2)</text>
 
   <!-- Легенда -->
   <g font-size="11">
@@ -196,7 +195,7 @@
   <!-- Штамп -->
   <rect x="860" y="660" width="370" height="90" fill="none" stroke="#333" stroke-width="1.5"/>
   <text x="875" y="685" font-size="13" font-weight="bold">MCAC — блок управления автоклавом</text>
-  <text x="875" y="705" font-size="11">Схема обвязки (принципиальная), ревизия v0.1</text>
-  <text x="875" y="723" font-size="10" fill="#666">03.11.2026 · лист 1/1 · docs/schematic_v0.1.svg</text>
+  <text x="875" y="705" font-size="11">Схема обвязки (принципиальная), ревизия v0.1.2</text>
+  <text x="875" y="723" font-size="10" fill="#666">06.11.2026 · лист 1/1 · docs/schematic_v0.1.svg</text>
   <text x="875" y="740" font-size="10" fill="#b33">Монтаж — по docs/ASSEMBLY.md; перед 220 В — прозвонка §7.1</text>
 </svg>
