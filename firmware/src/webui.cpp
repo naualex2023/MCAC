@@ -161,7 +161,7 @@ void WebUi::begin() {
   if (MDNS.begin(HOSTNAME)) MDNS.addService("http", "tcp", 80);
 
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *r) {
-    r->send_P(200, "text/html", INDEX_HTML);
+    r->send(200, "text/html", INDEX_HTML);
   });
   server.on("/api/status", HTTP_GET, [](AsyncWebServerRequest *r) {
     r->send(200, "application/json", statusJson());
@@ -194,7 +194,6 @@ void WebUi::begin() {
 
 void WebUi::service() {
   if (_restartAtMs && millis() > _restartAtMs) ESP.restart();
-  MDNS.update();
-  ArduinoOTA.handle();
+  ArduinoOTA.handle(); // mDNS на ESP32 работает по внутренним таймерам — update() не нужен
 }
 

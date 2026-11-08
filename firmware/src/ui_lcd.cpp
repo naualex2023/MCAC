@@ -12,7 +12,7 @@ void UiLcd::begin() {
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);
   _lcd.init();
   _lcd.backlight();
-  _lcd.setCursor(0, 0); _lcd.print("MCAC v" FW_VERSION);
+  _lcd.setCursor(0, 0); _lcd.print("MCAC v"); _lcd.print(FW_VERSION);
   _lcd.setCursor(0, 1); _lcd.print("Sterilizer ready");
   if (LCD_ROWS >= 4) {
     _lcd.setCursor(0, 2); _lcd.print("waiting for WiFi");
@@ -59,7 +59,8 @@ void UiLcd::update() {
       snprintf(l1, sizeof(l1), wide ? "DONE! hold finished" : "DONE! cycle ok");
       break;
     case CState::ALARM:
-      snprintf(l1, sizeof(l1), wide ? "ALARM! see line 4" : "ALARM %.10s", machine.alarmMsg());
+      if (wide) snprintf(l1, sizeof(l1), "ALARM! see line 4");
+      else      snprintf(l1, sizeof(l1), "ALARM %.10s", machine.alarmMsg());
       break;
     default:
       snprintf(l1, sizeof(l1), "?");
