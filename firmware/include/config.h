@@ -15,9 +15,9 @@ constexpr uint8_t LCD_COLS = 20;   // LCD 2004A (20×4); для 1602 — пос�
 constexpr uint8_t LCD_ROWS = 4;    // рендер в ui_lcd.cpp адаптируется автоматически
 
 // ---------- Датчик: штатный NTC (топология: 3V3 — NTC — [узел A] — R_DIV — GND) ----------
-constexpr float NTC_R25  = 100000.0f; // Ом @25°C — ЗАМЕНИТЬ на замеренное R25 своего датчика!
+constexpr float NTC_R25  = 10000.0f; // Ом @25°C — ЗАМЕНИТЬ на замеренное R25 своего датчика!
 constexpr float NTC_BETA = 3950.0f;   // B-коэффициент; уточняется калибровкой (ASSEMBLY §8.3)
-constexpr float DIV_R    = 10000.0f;  // Ом, резистор делителя 1% (10к при R25=100к)
+constexpr float DIV_R    = 10000.0f;  // Ом, резистор делителя 1% (10к — совпадает с R25 датчика 10к)
 constexpr float VREF     = 3.3f;
 constexpr int   ADC_MAX  = 4095;
 
