@@ -10,13 +10,24 @@ void TempSensor::begin() {
 }
 
 bool TempSensor::readCelsius(float &out) {
-  // 8 замеров с усреднением
-  uint32_t acc = 0;
-  for (int i = 0; i < 8; i++) {
-    acc += analogRead(PIN_NTC_ADC);
-    delayMicroseconds(200);
+  // 64 замера с усреднением: trimmean — отбрасываем по 4 мин. и 4 макс.
+  // (устойчиво к выбросам ADC при Wi-Fi-транзитах и пульсациях шины 3V3)
+  const int N = 64, CUT = 4;
+  uint16_t buf[N];
+  for (int i = 0; i < N; i++) {
+    buf[i] = (uint16_t)analogRead(PIN_NTC_ADC);
+    delayMicroseconds(1200);                       // ~77 мс на полный замер
   }
-  _adc = (int)(acc / 8);
+  // сортировка вставками (N=64 — дёшево)
+  for (int i = 1; i < N; i++) {
+    uint16_t v = buf[i];
+    int j = i - 1;
+    while (j >= 0 && buf[j] > v) { buf[j + 1] = buf[j]; j--; }
+    buf[j + 1] = v; // вставка на позицию после последнего сдвига
+  }
+  uint32_t acc = 0;
+  for (int i = CUT; i < N - CUT; i++) acc += buf[i];
+  _adc = (int)(acc / (N - 2 * CUT));
 
   // Диагностика цепи: V≈0 → обрыв NTC (узел A через R на GND);
   //                   V≈VREF → КЗ NTC (узел A подтянут к 3V3)
