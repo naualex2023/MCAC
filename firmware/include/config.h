@@ -18,6 +18,10 @@ constexpr uint8_t LCD_ROWS = 4;    // рендер в ui_lcd.cpp адаптир�
 constexpr float NTC_R25  = 10000.0f; // Ом @25°C — ЗАМЕНИТЬ на замеренное R25 своего датчика!
 constexpr float NTC_BETA = 3435.0f;   // B(25/85°C) — датчик типа 3435 (подтверждено замерами: 22.9к@5°C, ~1к@100°C)
 constexpr float DIV_R    = 10000.0f;  // Ом, резистор делителя 1% (10к — совпадает с R25 датчика 10к)
+// Топология делителя (перестройка — 2 провода, см. ASSEMBLY §3.1a):
+//   0 — NTC у 3V3 (историч.):  3V3—NTC—узел—R_DIV—GND  (обрыв/КЗ НЕ различимы)
+//   1 — NTC у GND (рекоменд.): 3V3—R_DIV—узел—NTC—GND  (обрыв→adc≈VREF, КЗ→adc≈0)
+constexpr int   NTC_TOPOLOGY = 0;   // сменить на 1 после перестройки проводки
 constexpr float VREF     = 3.3f;
 constexpr int   ADC_MAX  = 4095;
 

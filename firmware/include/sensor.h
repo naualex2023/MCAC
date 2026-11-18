@@ -1,9 +1,11 @@
 #pragma once
 #include <Arduino.h>
 
-enum class SensorStatus : uint8_t { OK = 0, OPEN, SHORT, OUT_OF_RANGE };
+enum class SensorStatus : uint8_t { OK = 0, OPEN, SHORT, OUT_OF_RANGE, OPEN_OR_SHORT, DIV_FAULT };
 
-// Датчик температуры на NTC (делитель 3V3—NTC—[ADC]—R—GND)
+// Датчик температуры на NTC, делитель. Топология — NTC_TOPOLOGY в config.h:
+//   0: 3V3—NTC—[узел A]—R_DIV—GND   (обрыв/КЗ неразличимы — совместимость)
+//   1: 3V3—R_DIV—[узел A]—NTC—GND   (обрыв→adc≈VREF, КЗ→adc≈0)
 class TempSensor {
 public:
   void begin();                 // настройка ADC
