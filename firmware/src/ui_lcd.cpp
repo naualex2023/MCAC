@@ -83,7 +83,7 @@ void UiLcd::update() {
     if (machine.state() == CState::ALARM)
       snprintf(l3, sizeof(l3), "%.20s", machine.alarmMsg());
     else if (!sensor.ok())
-      snprintf(l3, sizeof(l3), "SENSOR: %s", sensor.statusStr());
+      snprintf(l3, sizeof(l3), "S:%.12s %4d", sensor.statusStr(), sensor.adcRaw()); // adc — счёт ADC
     else
       snprintf(l3, sizeof(l3), "cal:%+4.1fC  log:%3u", (double)storage.s.calOffset, (unsigned)machine.logLen);
 

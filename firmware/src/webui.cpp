@@ -79,6 +79,7 @@ static String statusJson() {
   doc["state"]     = cstateStr(machine.state());
   doc["sensorOk"]  = sensor.ok();
   doc["sensorErr"] = sensor.statusStr();
+  doc["adc"]       = sensor.adcRaw(); // сырой счёт ADC для отладки цепи датчика
   if (!isnan(sensor.temp())) doc["temp"] = sensor.temp(); // иначе поле null
   doc["setpoint"]  = storage.s.setpoint;
   doc["holdMin"]   = storage.s.holdMin;
