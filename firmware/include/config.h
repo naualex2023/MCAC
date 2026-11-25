@@ -21,7 +21,7 @@ constexpr float DIV_R    = 10000.0f;  // Ом, резистор делителя
 // Топология делителя (перестройка — 2 провода, см. ASSEMBLY §3.1a):
 //   0 — NTC у 3V3 (историч.):  3V3—NTC—узел—R_DIV—GND  (обрыв/КЗ НЕ различимы)
 //   1 — NTC у GND (рекоменд.): 3V3—R_DIV—узел—NTC—GND  (обрыв→adc≈VREF, КЗ→adc≈0)
-constexpr int   NTC_TOPOLOGY = 0;   // сменить на 1 после перестройки проводки
+constexpr int   NTC_TOPOLOGY = 1;   // сменить на 1 после перестройки проводки
 constexpr float VREF     = 3.3f;
 constexpr int   ADC_MAX  = 4095;
 
