@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="620" fill="#fdfdf8"/>
+  <text x="30" y="42" font-size="24" font-weight="bold" fill="#111">MCAC — датчик DS18B20 по 1-Wire (отладочная ветка feature/ds18b20)</text>
+  <text x="30" y="66" font-size="14" fill="#555">Замена NTC-цепи: делитель, R_DIV, узел A и GPIO34 НЕ ИСПОЛЬЗУЮТСЯ. Остальное железо без изменений (см. schematic_v0.1.svg).</text>
+
+  <!-- зона ESP32 -->
+  <rect x="60" y="110" width="260" height="330" rx="10" fill="#eef3fb" stroke="#334" stroke-width="2"/>
+  <text x="90" y="140" font-size="16" font-weight="bold" fill="#123">ESP32 DevKit (WROOM-32)</text>
+  <!-- пины -->
+  <rect x="270" y="170" width="26" height="14" fill="#fff" stroke="#334"/>
+  <text x="216" y="182" font-size="13" text-anchor="end" fill="#123">3V3</text>
+  <rect x="270" y="240" width="26" height="14" fill="#fff" stroke="#334"/>
+  <text x="216" y="252" font-size="13" text-anchor="end" fill="#123">GPIO4 (1-Wire DATA)</text>
+  <rect x="270" y="360" width="26" height="14" fill="#fff" stroke="#334"/>
+  <text x="216" y="372" font-size="13" text-anchor="end" fill="#123">GND</text>
+
+  <!-- DS18B20 -->
+  <rect x="760" y="150" width="300" height="300" rx="10" fill="#f3faf3" stroke="#264" stroke-width="2"/>
+  <text x="800" y="180" font-size="16" font-weight="bold" fill="#143">DS18B20 (гильза/щуп, 3 провода)</text>
+  <rect x="820" y="200" width="26" height="14" fill="#fff" stroke="#264"/>
+  <text x="852" y="212" font-size="13" fill="#143">VCC (красный) — к 3V3</text>
+  <rect x="820" y="250" width="26" height="14" fill="#fff" stroke="#264"/>
+  <text x="852" y="262" font-size="13" fill="#143">DATA (жёлтый) — к GPIO4</text>
+  <rect x="820" y="300" width="26" height="14" fill="#fff" stroke="#264"/>
+  <text x="852" y="312" font-size="13" fill="#143">GND (чёрный) — к GND</text>
+  <text x="800" y="380" font-size="12" fill="#355">Паразитный режим (2 провода) — не использовать:</text>
+  <text x="800" y="398" font-size="12" fill="#355">питание 3V3 на датчике обязательно (цифры 750 мс конверсии).</text>
+
+  <!-- провода -->
+  <!-- 3V3 → VCC (красная) -->
+  <path d="M 296 177 H 520 V 207 H 820" fill="none" stroke="#c22" stroke-width="2"/>
+  <circle cx="520" cy="207" r="3.5" fill="#c22"/>
+  <!-- GPIO4 → DATA (синяя) -->
+  <path d="M 296 247 H 620 V 257 H 820" fill="none" stroke="#147" stroke-width="2"/>
+  <!-- GND → GND (чёрная) -->
+  <path d="M 296 367 H 680 V 307 H 820" fill="none" stroke="#111" stroke-width="2"/>
+  <!-- подтяжка 4.7к: от 3V3-цепи вниз к DATA-цепи -->
+  <rect x="505" y="272" width="30" height="64" fill="#fff" stroke="#334" stroke-width="2"/>
+  <text x="520" y="266" font-size="13" text-anchor="middle" fill="#123">R4 4.7к</text>
+  <line x1="520" y1="207" x2="520" y2="272" stroke="#c22" stroke-width="2"/>
+  <line x1="520" y1="336" x2="520" y2="257" stroke="#147" stroke-width="2"/>
+  <circle cx="520" cy="257" r="3.5" fill="#147"/>
+
+  <!-- легенда -->
+  <rect x="60" y="470" width="620" height="120" rx="8" fill="#fffdf3" stroke="#997"/>
+  <text x="80" y="494" font-size="14" font-weight="bold" fill="#443">Легенда / примечания</text>
+  <line x1="80" y1="512" x2="120" y2="512" stroke="#c22" stroke-width="2"/>
+  <text x="128" y="516" font-size="12" fill="#443">цепь 3V3</text>
+  <line x1="220" y1="512" x2="260" y2="512" stroke="#147" stroke-width="2"/>
+  <text x="268" y="516" font-size="12" fill="#443">шина 1-Wire (DATA)</text>
+  <line x1="420" y1="512" x2="460" y2="512" stroke="#111" stroke-width="2"/>
+  <text x="468" y="516" font-size="12" fill="#443">GND</text>
+  <text x="80" y="544" font-size="12" fill="#443">• Подтяжка 4.7 кОм ОБЯЗАТЕЛЬНА (между DATA и 3V3), ставится в любом месте шины.</text>
+  <text x="80" y="564" font-size="12" fill="#443">• Несколько DS18B20 можно повесить на одну шину параллельно (одна подтяжка на всех).</text>
+  <text x="80" y="584" font-size="12" fill="#443">• Кабель до 3–5 м без экранирования; не прокладывать вдоль силовых проводов SSR/220 В.</text>
+
+  <!-- предупреждение -->
+  <rect x="710" y="470" width="460" height="120" rx="8" fill="#fff2f2" stroke="#c66"/>
+  <text x="730" y="494" font-size="14" font-weight="bold" fill="#a22">⚠ Ограничения DS18B20</text>
+  <text x="730" y="518" font-size="12" fill="#633">• Максимум +125 °C; точность ±0.5 °C гарантируется только до +85 °C.</text>
+  <text x="730" y="538" font-size="12" fill="#633">• Для боевых циклов 121 °C — на пределе: использовать для отладки</text>
+  <text x="730" y="556" font-size="12" fill="#633">контура и низкотемпературных циклов.</text>
+  <text x="730" y="578" font-size="12" fill="#633">• Боевое решение: PT1000 + MAX31865 (BOM-MIN, вариант A).</text>
+
+  <!-- штамп -->
+  <rect x="1000" y="24" width="170" height="44" fill="#fff" stroke="#334"/>
+  <text x="1010" y="41" font-size="11" fill="#123">MCAC · ветка feature/ds18b20</text>
+  <text x="1010" y="58" font-size="11" fill="#123">рев. v0.1-ds18b20 · 25.11.2026</text>
+</svg>
